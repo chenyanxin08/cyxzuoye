@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+</head>
+<body>
+<div class="xin"></div>
+<br/><br/>
+<div class="center"></div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    $(function(){
+        $.ajax({
+            url:"http://localhost:3000/item/list",
+            type:"GET",
+            success:function(e){
+                for(var  i=0;i< e.length;i++){
+                    $("body").append('<a href="b.html?id='+e[i].id+'">'+e[i].name+'</a><br/>')
+                }
+                $(".xin").append('<a href="b.html">新闻</a><br/>');
+            }
+        })
+    })
+</script>
+</body>
+</html>
